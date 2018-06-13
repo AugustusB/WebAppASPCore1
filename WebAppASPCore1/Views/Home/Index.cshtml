@@ -1,0 +1,21 @@
+﻿@model HomeIndexVM
+
+@{
+    ViewBag.Title = "Home Page";
+    //Layout = "~/Views/Shared/_Layout.ckshtml";
+}
+
+<h1>All Developers</h1>
+
+@foreach (var item in Model.Developers)
+{
+    @Html.Partial("_Summary", item);
+}
+
+<div><a asp-action="Create">Add Developer</a></div>
+
+@*<div>
+    @section footer {
+        <h1>@Model.CompanyMessage</h1>
+}
+</div>*@

@@ -1,0 +1,30 @@
+﻿@page "{Id}"
+@using WebAppASPCore1.Pages.Developers;
+@model EditModel
+
+<h1>Edit @Model.Developer.Name</h1>
+<form method="post">
+    <input type="hidden" asp-for="Developer.Id" />
+
+    <div>
+        <label asp-for="Developer.Name"></label>
+        <input asp-for="Developer.Name" />
+        <span asp-validation-for="Developer.Name"></span>
+    </div>
+    <div>
+        <label asp-for="Developer.Age"></label>
+        <input asp-for="Developer.Age" />
+        <span asp-validation-for="Developer.Age"></span>
+    </div>
+    <div>
+        <label asp-for="Developer.Address"></label>
+        <input asp-for="Developer.Address" />
+        <span asp-validation-for="Developer.Address"></span>
+    </div>
+    <div>
+        <label asp-for="Developer.TypeOfDev"></label>
+        <select asp-for="Developer.TypeOfDev" asp-items="Html.GetEnumSelectList<eDeveloperType>()"></select>
+        <span asp-validation-for="Developer.TypeOfDev"></span>
+    </div>
+    <input type="submit" name="save" value="Save" />
+</form>
